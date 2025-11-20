@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/HildaWadada/my-website#readme",
   "dependencies": {
+    "connect-mongo": "^5.1.0",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-session": "^1.18.2",
     "mongoose": "^8.19.3",
+    "nodemailer": "^7.0.10",
     "nodemon": "^3.1.11",
     "passport": "^0.7.0",
     "pug": "^3.0.3"

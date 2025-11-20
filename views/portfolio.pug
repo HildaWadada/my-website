@@ -1,91 +1,103 @@
 doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Hilda Wadada - Fullstack Developer
-  link(rel='stylesheet' href='/index.css')
-  link(href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet')
-main
-  header.header
-    nav.navbar
-      a.active(href='#home') Home
-      a(href='#education') Education
-      a(href='#skills') skills
-      a(href='#goals') Goals
-      a(href='#contact me') Contact Me
-  section#home.home
-    .home-img
-      img(src='/images/dada.jpg' alt='Hilda Wadada')
-    .home-content
-      h1 Hi, I&apos;am Wadada Hilda
-      h3 Fullstack Developer
-      p
-        | I am specializig in both frontend and backend development, crafting responsive websites and robust server side solutions.
-        | Passionate about clean code, intuitive design, and turning complex problems into elegant solutions.
-  section#education.education
-    h1 My Education Background
-    .card-container
-      .card
-        h2 Ordinary Level (O&apos;level)
-        p.year 2018 - 2022
-        p Kira Secondary School-Namugongo
-        p Uganda Certificate of Education
-      .card
-        h2 Advanced Level (A&apos;level)
-        p.year 2023 - 2024
-        p Kisowera Secondary School-Mukono
-        p Uganda Advanced Certificate of Education
-      .card
-        h2 Certifications
-        p
-          | Pursuing a Certificate of Software Engineering with Javascript at Refactory Academy.
-        p.year 2025 - 2026
-  section#skills.skills
-    h1 My Skills
-    .card-container
-      .card
-        h2 HTML
-        p Experienced in creating structured and semantic web pages.
-      .card
-        h2 CSS
-        p Skilled in designing responsive layouts and modern UI styles.
-      .card
-        h2 JavaScript
-        p Capable of building interactive features and dynamic web apps.
-      .card
-        h2 Figma
-        p Proficient in designing modern and responsive UI/UX prototypes using Figma.
-      .card
-        h2 Agile
-        p
-          | Experienced with Agile methodologies for flexible and iterative project delivery.
-      .card
-        h2 Scrum
-        p Knowledgeable in Scrum practices, sprint planning, and collaborative teamwork.
-  section#goals.goals
-    h1 My Goals
-    .card-container
-      .card
-        h2 Short Term
-        p Master front-end development (HTML, CSS, JavaScript).
-        p Build personal projects to improve my portfolio.
-      .card
-        h2 Medium Term
-        p Learn Node.js and React to become a full-stack developer.
-        p Contribute to open-source projects and collaborate with others.
-      .card
-        h2 Long Term
-        p Start my own tech company in music and event management.
-        p Use tech to support creative industries and upcoming artists.
-  section.contact.me(id='contact me')
-    h1 Contact Me
-    form#contactForm.contact-form
-      input#name(type='text' ,name='Your Name', placeholder='Your Name' required='')
-      input#email(type='email' ,name='Your Email' ,placeholder='Your Email' required='')
-      textarea#message(placeholder='Your Message' rows='5' required='')
-      button(type='submit') Send Message
-      p#formMessage
-      // feedback text
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Hilda Wadada - Fullstack Developer & AI Engineer
+    link(rel='stylesheet', href='/css/index.css')
+    link(href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css', rel='stylesheet')
+  body
+    main
+      header.header
+        nav.navbar
+          a.active(href='#home') Home
+          a(href='#education') Education
+          a(href='#skills') Skills
+          a(href='#goals') Goals
+          a(href='/contactme') Contact Me
+
+      // Home Section
+      section#home.home
+        .home-img
+          img(src='/images/dada.jpg', alt='Hilda Wadada')
+        .home-content
+          h1 Hi, I'm Wadada Hilda
+          h3 Fullstack Developer
+          p
+            | I am specializing in both frontend and backend development, crafting responsive websites and robust server-side solutions. 
+            | Passionate about clean code, intuitive design, and turning complex problems into elegant solutions.
+
+      // Education Section
+      section#education.education
+        h1 My Education Background
+        .card-container
+          .card
+            h2 Ordinary Level (O'level)
+            p.year 2018 - 2022
+            p Kira Secondary School-Namugongo
+            p Uganda Certificate of Education
+          .card
+            h2 Advanced Level (A'level)
+            p.year 2023 - 2024
+            p Kisowera Secondary School-Mukono
+            p Uganda Advanced Certificate of Education
+          .card
+            h2 Certifications
+            p Pursuing a Certificate of Software Engineering with Javascript at Refactory Academy.
+            p.year 2025 - 2026
+
+      // Skills Section
+      section#skills.skills
+        h1 My Skills
+        .card-container
+          .card
+            h2 HTML
+            p Experienced in creating structured and semantic web pages.
+          .card
+            h2 CSS
+            p Skilled in designing responsive layouts and modern UI styles.
+          .card
+            h2 JavaScript
+            p Capable of building interactive features and dynamic web apps.
+          .card
+            h2 Figma
+            p Proficient in designing modern and responsive UI/UX prototypes using Figma.
+          .card
+            h2 Agile
+            p Experienced with Agile methodologies for flexible and iterative project delivery.
+          .card
+            h2 Scrum
+            p Knowledgeable in Scrum practices, sprint planning, and collaborative teamwork.
+
+      // Goals Section
+      section#goals.goals
+        h1 My Goals
+        .card-container
+          .card
+            h2 Short Term
+            p Master front-end development (HTML, CSS, JavaScript).
+            p Build personal projects to improve my portfolio.
+          .card
+            h2 Medium Term
+            p Learn Node.js and React to become a full-stack developer.
+            p Contribute to open-source projects and collaborate with others.
+          .card
+            h2 Long Term
+            p Start my own tech company in music and event management.
+            p Use tech to support creative industries and upcoming artists.
+
+      // Contact Section
+      section.contact#contact-me
+        h1 Contact Me
+        form#contactForm.contact-form(action='/contactme', method='POST')
+          input(type='text', name='name', placeholder='Your Name', required='')
+          input(type='email', name='email', placeholder='Your Email', required='')
+          textarea(name='message', placeholder='Your Message', rows='5', required='')
+          button(type='submit') Send Message
+          if formMessage
+            p#formMessage= formMessage
+
+      // Footer
       footer.footer
         .footer-container
           p &copy; 2025 Hilda Wadada | Fullstack Developer
@@ -98,6 +110,5 @@ main
           .footer-socials
             a(href='https://github.com/HildaWadada')
               i.bx.bxl-github
-              a(style='margin-left: 10px;' href='https://www.linkedin.com/in/hilda-wadada/')
-                i.bx.bxl-linkedin
-//- script(src='lets-talk.js'),
+            a(href='https://www.linkedin.com/in/hilda-wadada/', style='margin-left: 10px;')
+              i.bx.bxl-linkedin
