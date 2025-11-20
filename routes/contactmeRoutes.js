@@ -4,8 +4,8 @@ const router = express.Router();
 
 
 // Render contact page
-router.get('/contactme', (req, res) => {
-  res.render('contactme');
+router.get('/', (req, res) => {
+  res.render('');
 });
 
 // Handle form submission
@@ -23,7 +23,7 @@ router.post('/contactme', async (req, res) => {
 
   const mailOptions = {
     from: `"${name}" <${email}>`,
-    to: process.env.EMAIL,           // where you want to receive messages
+    to: process.env.EMAIL,          
     subject: `New message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
