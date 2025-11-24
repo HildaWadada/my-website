@@ -28,7 +28,6 @@ html(lang='en')
             |Passionate about clean code, intuitive design, and turning complex problems into elegant solutions. 
             |I am also exploring the field of Artificial Intelligence, learning to integrate AI-powered features into applications to make them smarter and more intuitive.
 
-
       // Education Section
       section#education.education
         h1 My Education Background
@@ -45,8 +44,11 @@ html(lang='en')
             p Uganda Advanced Certificate of Education
           .card
             h2 Certifications
-            p Pursuing a Certificate of Software Engineering with Javascript at Refactory Academy.
-            p.year 2025 - 2026
+            p Certificate of Software Engineering with Javascript at Refactory Academy.
+            p.year July 2025 - October 2025
+            
+            p Pursuing a Certificate of Software Engineering and AI with Turing College.
+            p.year October 2025 - June 2026
 
       // Skills Section
       section#skills.skills
@@ -91,13 +93,52 @@ html(lang='en')
       // Contact Section
       section.contact#contact-me
         h1 Contact Me
-        form#contactForm.contact-form(action='/contactme', method='POST')
+
+        // Message will appear here after sending
+        p#formMessage(style='padding:10px; background:#d4edda; color:#155724; margin-bottom:10px; border-radius:5px; display:none;')
+
+        form#contactForm.contact-form
           input(type='text', name='name', placeholder='Your Name', required='')
           input(type='email', name='email', placeholder='Your Email', required='')
           textarea(name='message', placeholder='Your Message', rows='5', required='')
           button(type='submit') Send Message
-          if formMessage
-            p#formMessage= formMessage
+
+        // AJAX script to handle form submission
+        script.
+          const form = document.getElementById('contactForm');
+          const formMessage = document.getElementById('formMessage');
+
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            const formData = {
+              name: form.name.value,
+              email: form.email.value,
+              message: form.message.value
+            };
+
+            try {
+              const res = await fetch('/contactme', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+              });
+
+              if (res.ok) {
+                formMessage.textContent = `✅ Thank you ${formData.name}, your message has been sent!`;
+                formMessage.style.display = 'block';
+                form.reset(); // Clear the form fields
+              } else {
+                formMessage.textContent = '❌ Something went wrong. Please try again.';
+                formMessage.style.display = 'block';
+              }
+            } catch (err) {
+              formMessage.textContent = '❌ Something went wrong. Please try again.';
+              formMessage.style.display = 'block';
+            }
+          });
 
       // Footer
       footer.footer

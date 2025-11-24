@@ -2,28 +2,21 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const router = express.Router();
 
-
-// Render contact page
-router.get('/', (req, res) => {
-  res.render('');
-});
-
 // Handle form submission
 router.post('/contactme', async (req, res) => {
   const { name, email, message } = req.body;
 
-  // Configure Nodemailer transporter
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL,       // your Gmail
-      pass: process.env.EMAIL_PASS          // Gmail App Password
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   const mailOptions = {
     from: `"${name}" <${email}>`,
-    to: process.env.EMAIL,          
+    to: process.env.EMAIL,
     subject: `New message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
@@ -31,10 +24,12 @@ router.post('/contactme', async (req, res) => {
   try {
     await transporter.sendMail(mailOptions);
     console.log('✅ Email sent successfully!');
-    res.render('contactme', { formMessage: `✅ Thank you ${name}, your message has been sent!` });
+    // Send success response as JSON
+    res.status(200).json({ success: true, message: `Thank you ${name}, your message has been sent!` });
   } catch (error) {
     console.error('❌ Error sending email:', error);
-    res.render('contact-me', { formMessage: '❌ Something went wrong. Please try again later.' });
+    // Send error response as JSON
+    res.status(500).json({ success: false, message: 'Something went wrong. Please try again.' });
   }
 });
 

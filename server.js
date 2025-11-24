@@ -1,10 +1,8 @@
-require('dotenv').config(); 
-
 const express = require('express');
 const path = require('path');
-
 const app = express();
 
+require('dotenv').config(); 
 // View engine
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
