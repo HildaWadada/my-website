@@ -3,7 +3,7 @@ const path = require('path');
 const contactmeRoutes = require('./routes/contactmeRoutes');
 const app = express();
 
-require('dotenv').config(); 
+require('dotenv').config();
 
 // View engine
 app.set('view engine', 'pug');
@@ -17,8 +17,8 @@ app.use(express.json());
 // Contact form route
 app.use('/contactme', contactmeRoutes);
 
-// Catch-all route for SPA (renders portfolio for / and any unmatched URL)
-app.get('*', (req, res) => {
+// Catch-all for SPA (Express 5 safe)
+app.use((req, res) => {
   res.render('portfolio', { formMessage: null });
 });
 
