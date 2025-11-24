@@ -3,14 +3,14 @@ const nodemailer = require('nodemailer');
 const router = express.Router();
 
 // Handle form submission
-router.post('/contactme', async (req, res) => {
+router.post('/', async (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL,
-      pass: process.env.EMAIL_PASS,
+      user: process.env.EMAIL,       // your Gmail
+      pass: process.env.EMAIL_PASS,  // Gmail App Password
     },
   });
 

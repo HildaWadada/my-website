@@ -3,7 +3,7 @@ const router = express.Router();
 
 // ✅ Render portfolio page
 router.get('/portfolio', (req, res) => {
-  res.render('portfolio');
+  res.render('portfolio', { formMessage: null });
 });
 
 module.exports = router;
