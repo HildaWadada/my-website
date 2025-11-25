@@ -281,6 +281,11 @@ h1 {
   transform: translateY(-2px);
 }
 
+.input-error {
+  border: 2px solid #e63946 !important;
+}
+
+
 #formMessage {
   margin-top: 10px;
   font-size: 15px;

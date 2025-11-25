@@ -94,7 +94,7 @@ html(lang='en')
       section.contact#contactme
         h1 Contact Me
 
-        p#formMessage(style='padding:10px; margin-bottom:10px; border-radius:5px; display:none;')
+        p#formMessage(style='padding:10px; background:#d4edda; color:#155724; margin-bottom:10px; border-radius:5px; display:none;')
 
         // Formspree Form
         form#contactForm.contact-form(action="https://formspree.io/f/xjkdeoby" method="POST")
@@ -103,35 +103,55 @@ html(lang='en')
           textarea(name='message', placeholder='Your Message', rows='5')
           button(type='submit') Send Message
 
-    // Scripts OUTSIDE 'main' so they run AFTER form loads
+    // Scripts OUTSIDE main
     script.
       document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById('contactForm');
-        const formMessage = document.getElementById('formMessage');
+        const form = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
 
-        form.addEventListener('submit', async (e) => {
+        // Turn off default browser validation
+        form.setAttribute("novalidate", true);
+
+        form.addEventListener("submit", async (e) => {
           e.preventDefault();
 
           const name = form.name.value.trim();
           const email = form.email.value.trim();
           const message = form.message.value.trim();
 
-          // Custom validation
-          if (!name || !email || !message) {
-            formMessage.textContent = '❌ All fields are required!';
-            formMessage.style.background = '#f8d7da';
-            formMessage.style.color = '#721c24';
-            formMessage.style.display = 'block';
-            return;
+          // Remove red borders first
+          form.name.classList.remove("input-error");
+          form.email.classList.remove("input-error");
+          form.message.classList.remove("input-error");
+
+          let hasError = false;
+
+          // Check empty fields
+          if (!name) {
+            form.name.classList.add("input-error");
+            hasError = true;
+          }
+          if (!email) {
+            form.email.classList.add("input-error");
+            hasError = true;
+          }
+          if (!message) {
+            form.message.classList.add("input-error");
+            hasError = true;
           }
 
-          // Email format check
+          // Email format validation
           const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-          if (!emailRegex.test(email)) {
-            formMessage.textContent = '❌ Please enter a valid email address.';
-            formMessage.style.background = '#f8d7da';
-            formMessage.style.color = '#721c24';
-            formMessage.style.display = 'block';
+          if (email && !emailRegex.test(email)) {
+            form.email.classList.add("input-error");
+            hasError = true;
+          }
+
+          if (hasError) {
+            formMessage.textContent = "❌ Please fix the highlighted fields.";
+            formMessage.style.background = "#f8d7da";
+            formMessage.style.color = "#721c24";
+            formMessage.style.display = "block";
             return;
           }
 
@@ -139,28 +159,28 @@ html(lang='en')
 
           try {
             const res = await fetch(form.action, {
-              method: 'POST',
+              method: "POST",
               body: formData,
-              headers: { 'Accept': 'application/json' }
+              headers: { "Accept": "application/json" }
             });
 
             if (res.ok) {
-              formMessage.textContent = '✅ Thank you! Your message has been sent.';
-              formMessage.style.background = '#d4edda';
-              formMessage.style.color = '#155724';
-              formMessage.style.display = 'block';
+              formMessage.textContent = "✅ Thank you! Your message has been sent.";
+              formMessage.style.background = "#d4edda";
+              formMessage.style.color = "#155724";
+              formMessage.style.display = "block";
               form.reset();
             } else {
-              formMessage.textContent = '❌ Something went wrong. Please try again.';
-              formMessage.style.background = '#f8d7da';
-              formMessage.style.color = '#721c24';
-              formMessage.style.display = 'block';
+              formMessage.textContent = "❌ Something went wrong.";
+              formMessage.style.background = "#f8d7da";
+              formMessage.style.color = "#721c24";
+              formMessage.style.display = "block";
             }
           } catch (err) {
-            formMessage.textContent = '❌ Something went wrong. Please try again.';
-            formMessage.style.background = '#f8d7da';
-            formMessage.style.color = '#721c24';
-            formMessage.style.display = 'block';
+            formMessage.textContent = "❌ Something went wrong.";
+            formMessage.style.background = "#f8d7da";
+            formMessage.style.color = "#721c24";
+            formMessage.style.display = "block";
           }
         });
       });
@@ -168,7 +188,7 @@ html(lang='en')
     // Footer
     footer.footer
       .footer-container
-        p &copy; 2025 Hilda Wadada | Fullstack Developer
+        p &copy; 2025 Hilda Wadada | AI Engineer & Web Developer
         p
           | Email:
           a(href='mailto:hildawadada@gmail.com') hildawadada@gmail.com
