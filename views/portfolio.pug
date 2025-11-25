@@ -96,7 +96,8 @@ html(lang='en')
 
         p#formMessage(style='padding:10px; background:#d4edda; color:#155724; margin-bottom:10px; border-radius:5px; display:none;')
 
-        form#contactForm.contact-form
+        // Updated Formspree Form
+        form#contactForm.contact-form(action="https://formspree.io/f/xjkdeoby" method="POST")
           input(type='text', name='name', placeholder='Your Name', required='')
           input(type='email', name='email', placeholder='Your Email', required='')
           textarea(name='message', placeholder='Your Message', rows='5', required='')
@@ -111,28 +112,23 @@ html(lang='en')
         form.addEventListener('submit', async (e) => {
           e.preventDefault();
 
-          const formData = {
-            name: form.name.value,
-            email: form.email.value,
-            message: form.message.value
-          };
+          const formData = new FormData(form);
 
           try {
-            const res = await fetch('/contactme', {
+            const res = await fetch(form.action, {
               method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(formData)
+              body: formData,
+              headers: { 'Accept': 'application/json' }
             });
 
-            const result = await res.json();
-
-            formMessage.textContent = result.message;
-            formMessage.style.display = 'block';
-
-            if (result.success) {
+            if (res.ok) {
+              formMessage.textContent = '✅ Thank you! Your message has been sent.';
+              formMessage.style.display = 'block';
               form.reset();
+            } else {
+              formMessage.textContent = '❌ Something went wrong. Please try again.';
+              formMessage.style.display = 'block';
             }
-
           } catch (err) {
             formMessage.textContent = '❌ Something went wrong. Please try again.';
             formMessage.style.display = 'block';

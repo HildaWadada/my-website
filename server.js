@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const contactmeRoutes = require('./routes/contactmeRoutes');
+// const contactmeRoutes = require('./routes/contactmeRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -14,8 +14,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Contact form route
-app.use('/contactme', contactmeRoutes);
+// // Contact form route
+// app.use('/', contactmeRoutes);
 
 // Catch-all for SPA (Express 5 safe)
 app.use((req, res) => {
