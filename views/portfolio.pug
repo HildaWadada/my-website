@@ -6,6 +6,7 @@ html(lang='en')
     title Hilda Wadada - Fullstack Developer & AI Engineer
     link(rel='stylesheet', href='/css/index.css')
     link(href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css', rel='stylesheet')
+
   body
     main
       header.header
@@ -24,9 +25,9 @@ html(lang='en')
           h1 Hi, I'm Wadada Hilda
           h3 AI Engineer & Web-developer
           p
-            |I am specializing in both frontend and backend development, crafting responsive websites and robust server-side solutions. 
-            |Passionate about clean code, intuitive design, and turning complex problems into elegant solutions. 
-            |I am also exploring the field of Artificial Intelligence, learning to integrate AI-powered features into applications to make them smarter and more intuitive.
+            | I am specializing in both frontend and backend development, crafting responsive websites and robust server-side solutions. 
+            | Passionate about clean code, intuitive design, and turning complex problems into elegant solutions. 
+            | I am also exploring the field of Artificial Intelligence, learning to integrate AI-powered features into applications to make them smarter and more intuitive.
 
       // Education Section
       section#education.education
@@ -46,7 +47,6 @@ html(lang='en')
             h2 Certifications
             p Certificate of Software Engineering with Javascript at Refactory Academy.
             p.year July 2025 - October 2025
-
             p Pursuing a Certificate of Software Engineering and AI with Turing College.
             p.year October 2025 - June 2026
 
@@ -94,7 +94,6 @@ html(lang='en')
       section.contact#contactme
         h1 Contact Me
 
-        // Message will appear here after sending
         p#formMessage(style='padding:10px; background:#d4edda; color:#155724; margin-bottom:10px; border-radius:5px; display:none;')
 
         form#contactForm.contact-form
@@ -103,56 +102,56 @@ html(lang='en')
           textarea(name='message', placeholder='Your Message', rows='5', required='')
           button(type='submit') Send Message
 
-        // AJAX script to handle form submission
-        script.
-          const form = document.getElementById('contactForm');
-          const formMessage = document.getElementById('formMessage');
+    // Scripts OUTSIDE 'main' so they run AFTER form loads
+    script.
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
 
-          form.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Prevent default form submission
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
 
-            const formData = {
-              name: form.name.value,
-              email: form.email.value,
-              message: form.message.value
-            };
+          const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value
+          };
 
-            try {
-              const res = await fetch('/contactme', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-              });
+          try {
+            const res = await fetch('/contactme', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData)
+            });
 
-              const result = await res.json();
+            const result = await res.json();
 
-              formMessage.textContent = result.message;
-              formMessage.style.display = 'block';
+            formMessage.textContent = result.message;
+            formMessage.style.display = 'block';
 
-              if (result.success) {
-                form.reset(); // clear form fields
-              }
-              
-            } catch (err) {
-              formMessage.textContent = '❌ Something went wrong. Please try again.';
-              formMessage.style.display = 'block';
+            if (result.success) {
+              form.reset();
             }
-          });
 
-      // Footer
-      footer.footer
-        .footer-container
-          p &copy; 2025 Hilda Wadada | Fullstack Developer
-          p
-            | Email: 
-            a(href='mailto:hildawadada@gmail.com') hildawadada@gmail.com
-          p
-            | Phone: 
-            a(href='tel:+256700000000') +256 782 828 778 | +256 703 723 368
-          .footer-socials
-            a(href='https://github.com/HildaWadada')
-              i.bx.bxl-github
-            a(href='https://www.linkedin.com/in/hilda-wadada/', style='margin-left: 10px;')
-              i.bx.bxl-linkedin
+          } catch (err) {
+            formMessage.textContent = '❌ Something went wrong. Please try again.';
+            formMessage.style.display = 'block';
+          }
+        });
+      });
+
+    // Footer
+    footer.footer
+      .footer-container
+        p &copy; 2025 Hilda Wadada | Fullstack Developer
+        p
+          | Email:
+          a(href='mailto:hildawadada@gmail.com') hildawadada@gmail.com
+        p
+          | Phone: 
+          a(href='tel:+256700000000') +256 782 828 778 | +256 703 723 368
+        .footer-socials
+          a(href='https://github.com/HildaWadada')
+            i.bx.bxl-github
+          a(href='https://www.linkedin.com/in/hilda-wadada/', style='margin-left: 10px;')
+            i.bx.bxl-linkedin
