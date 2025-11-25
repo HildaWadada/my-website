@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const router = express.Router();
 
 // Handle form submission
-router.post('/contactme', async (req, res) => {
+router.post('/', async (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({

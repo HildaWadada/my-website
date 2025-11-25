@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Contact form route
-app.use('/', contactmeRoutes);
+app.use('/contactme', contactmeRoutes);
 
 // Catch-all for SPA (Express 5 safe)
 app.use((req, res) => {
