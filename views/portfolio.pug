@@ -94,13 +94,13 @@ html(lang='en')
       section.contact#contactme
         h1 Contact Me
 
-        p#formMessage(style='padding:10px; background:#d4edda; color:#155724; margin-bottom:10px; border-radius:5px; display:none;')
+        p#formMessage(style='padding:10px; margin-bottom:10px; border-radius:5px; display:none;')
 
-        // Updated Formspree Form
+        // Formspree Form
         form#contactForm.contact-form(action="https://formspree.io/f/xjkdeoby" method="POST")
-          input(type='text', name='name', placeholder='Your Name', required='')
-          input(type='email', name='email', placeholder='Your Email', required='')
-          textarea(name='message', placeholder='Your Message', rows='5', required='')
+          input(type='text', name='name', placeholder='Your Name')
+          input(type='email', name='email', placeholder='Your Email')
+          textarea(name='message', placeholder='Your Message', rows='5')
           button(type='submit') Send Message
 
     // Scripts OUTSIDE 'main' so they run AFTER form loads
@@ -111,6 +111,29 @@ html(lang='en')
 
         form.addEventListener('submit', async (e) => {
           e.preventDefault();
+
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const message = form.message.value.trim();
+
+          // Custom validation
+          if (!name || !email || !message) {
+            formMessage.textContent = '❌ All fields are required!';
+            formMessage.style.background = '#f8d7da';
+            formMessage.style.color = '#721c24';
+            formMessage.style.display = 'block';
+            return;
+          }
+
+          // Email format check
+          const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+          if (!emailRegex.test(email)) {
+            formMessage.textContent = '❌ Please enter a valid email address.';
+            formMessage.style.background = '#f8d7da';
+            formMessage.style.color = '#721c24';
+            formMessage.style.display = 'block';
+            return;
+          }
 
           const formData = new FormData(form);
 
@@ -123,14 +146,20 @@ html(lang='en')
 
             if (res.ok) {
               formMessage.textContent = '✅ Thank you! Your message has been sent.';
+              formMessage.style.background = '#d4edda';
+              formMessage.style.color = '#155724';
               formMessage.style.display = 'block';
               form.reset();
             } else {
               formMessage.textContent = '❌ Something went wrong. Please try again.';
+              formMessage.style.background = '#f8d7da';
+              formMessage.style.color = '#721c24';
               formMessage.style.display = 'block';
             }
           } catch (err) {
             formMessage.textContent = '❌ Something went wrong. Please try again.';
+            formMessage.style.background = '#f8d7da';
+            formMessage.style.color = '#721c24';
             formMessage.style.display = 'block';
           }
         });
