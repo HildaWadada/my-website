@@ -19,7 +19,7 @@ body {
     width: 100%;
     padding: 20px 10%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* stack logo + navbar vertically */
     align-items: center;
     z-index: 100;
     background: rgb(128, 225, 238);
@@ -41,6 +41,20 @@ h1{
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* center the links horizontally */
+    gap: 35px;               /* space between links */
+    flex-wrap: wrap;         /* wrap links on small screens */
+    margin-top: 10px;        /* optional spacing below logo */
+}
+
+@media (max-width: 600px) {
+    .navbar a {
+        margin: 5px 10px; /* smaller spacing on phones */
+    }
 }
 
 .navbar a:hover,
