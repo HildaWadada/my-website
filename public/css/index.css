@@ -14,13 +14,6 @@ body {
 }
 
 /* =========================
-   GLOBAL HEADINGS
-========================= */
-h1 {
-  text-align: center; /* centers ALL h1 */
-}
-
-/* =========================
    HEADER
 ========================= */
 .header {
@@ -81,7 +74,7 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 50px;
-  padding: 150px 10% 100px;
+  padding: 150px 10% 100px; /* extra top space because header is fixed */
   min-height: 100vh;
 }
 
@@ -102,13 +95,11 @@ h1 {
   max-width: 600px;
 }
 
-/* Home h1 should stay big */
 .home-content h1 {
   font-size: 56px;
   font-weight: 700;
   line-height: 1.2;
   color: #ededed;
-  text-align: left; /* keep it left on desktop */
 }
 
 .home-content h3 {
@@ -139,7 +130,6 @@ h1 {
 
   .home-content h1 {
     font-size: 42px;
-    text-align: center; /* center on small screens */
   }
 
   .home-content h3 {
@@ -148,7 +138,7 @@ h1 {
 }
 
 /* =========================
-   GLOBAL SECTIONS
+   GLOBAL SECTIONS (Education, Skills, Goals, Contact)
 ========================= */
 .section {
   padding: 120px 10%;
@@ -159,8 +149,8 @@ h1 {
   justify-content: center;
 }
 
-/* This applies style to section titles */
 .section h1 {
+  text-align: center;
   font-size: 40px;
   margin-bottom: 50px;
   color: #00abf0;
@@ -190,7 +180,7 @@ h1 {
 }
 
 /* =========================
-   CARDS
+   CARDS (Reusable)
 ========================= */
 .card {
   background: #0d2a3a;
