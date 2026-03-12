@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import * as FeatherIcons from 'react-feather';
 import { skills } from '../data/skills';
 import './Skills.css';
 
 function SkillCard({ skill, visible }) {
   const [width, setWidth] = useState(0);
+  const Icon = FeatherIcons[skill.icon];
 
   useEffect(() => {
     if (visible) {
@@ -16,7 +18,7 @@ function SkillCard({ skill, visible }) {
     <div className="skill-card">
       <div className="skill-card__top">
         <div className="skill-card__icon" style={{ background: `${skill.color}18`, borderColor: `${skill.color}30` }}>
-          <span>{skill.icon}</span>
+          {Icon && <Icon size={22} color={skill.color} />}
         </div>
         <div className="skill-card__info">
           <span className="skill-card__name">{skill.name}</span>

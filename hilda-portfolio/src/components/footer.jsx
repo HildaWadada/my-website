@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'react-feather';
+import { GitHub, Linkedin, Mail } from 'react-feather';
 import './Footer.css';
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
               Building intelligent web experiences<br />from Kampala, Uganda.
             </p>
             <div className="footer__socials">
-              <a href="https://github.com/HildaWadada" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
+              <a href="https://github.com/HildaWadada" target="_blank" rel="noreferrer" aria-label="GitHub"><GitHub size={17} /></a>
               <a href="https://www.linkedin.com/in/hilda-wadada/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
               <a href="mailto:wadadahilda@gmail.com" aria-label="Email"><Mail size={17} /></a>
             </div>
