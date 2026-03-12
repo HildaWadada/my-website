@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import * as FiIcons from 'react-feather';
+import * as SiIcons from 'react-icons/si';
 import { skills } from '../data/skills';
 import './Skills.css';
 
 function SkillCard({ skill, visible }) {
   const [width, setWidth] = useState(0);
-  const Icon = FiIcons[skill.icon];
+  const Icon = SiIcons[skill.icon];
 
   useEffect(() => {
     if (visible) {

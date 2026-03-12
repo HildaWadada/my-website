@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, GitHub, Linkedin, Send } from 'react-feather';
+import { FaWhatsapp } from 'react-icons/fa';
 import './Contact.css';
 
 const contactDetails = [
-  { icon: <Mail size={16} />, label: 'Email',    value: 'wadadahilda@gmail.com', href: 'mailto:wadadahilda@gmail.com' },
-  { icon: <Phone size={16} />, label: 'Phone',   value: '+256 782 828 778',      href: 'tel:+256782828778' },
-  { icon: <MapPin size={16} />, label: 'Location', value: 'Kampala, Uganda',     href: null },
+  { icon: <Mail size={16} />,      label: 'Email',    value: 'wadadahilda@gmail.com', href: 'mailto:wadadahilda@gmail.com' },
+  { icon: <Phone size={16} />,     label: 'Phone',    value: '+256 782 828 778',      href: 'tel:+256782828778' },
+  { icon: <FaWhatsapp size={16} />, label: 'WhatsApp', value: '+256 703 723 368',     href: 'https://wa.me/256782828778' },
+  { icon: <MapPin size={16} />,    label: 'Location', value: 'Kampala, Uganda',       href: null },
 ];
 
 export default function Contact() {
