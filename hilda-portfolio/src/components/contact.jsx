@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, GitHub, Linkedin, Send } from 'react-feather';
-import { FaWhatsapp } from 'react-icons/fa';
+import { Mail, Phone, MapPin, Send } from 'react-feather';
+import { FaWhatsapp, FaLinkedin } from 'react-icons/fa';
 import './Contact.css';
 
 const contactDetails = [
-  { icon: <Mail size={16} />,      label: 'Email',    value: 'wadadahilda@gmail.com', href: 'mailto:wadadahilda@gmail.com' },
-  { icon: <Phone size={16} />,     label: 'Phone',    value: '+256 782 828 778',      href: 'tel:+256782828778' },
-  { icon: <FaWhatsapp size={16} />, label: 'WhatsApp', value: '+256 703 723 368',     href: 'https://wa.me/256782828778' },
-  { icon: <MapPin size={16} />,    label: 'Location', value: 'Kampala, Uganda',       href: null },
+  { icon: <Mail size={16} />,        label: 'Email',    value: 'wadadahilda@gmail.com',                href: 'mailto:wadadahilda@gmail.com' },
+  { icon: <Phone size={16} />,       label: 'Phone',    value: '+256 782 828 778',                     href: 'tel:+256782828778' },
+  { icon: <FaWhatsapp size={16} />,  label: 'WhatsApp', value: '+256 782 828 778',                     href: 'https://wa.me/256782828778' },
+  { icon: <FaLinkedin size={16} />,  label: 'LinkedIn', value: 'linkedin.com/in/hilda-wadada',         href: 'https://www.linkedin.com/in/hilda-wadada/' },
+  { icon: <MapPin size={16} />,      label: 'Location', value: 'Kampala, Uganda',                      href: null },
 ];
 
 export default function Contact() {
@@ -89,15 +90,6 @@ export default function Contact() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="contact__socials">
-              <a href="https://github.com/HildaWadada" target="_blank" rel="noreferrer" className="contact__social-link" aria-label="GitHub">
-                <GitHub size={18} />
-              </a>
-              <a href="https://www.linkedin.com/in/hilda-wadada/" target="_blank" rel="noreferrer" className="contact__social-link" aria-label="LinkedIn">
-                <Linkedin size={18} />
-              </a>
             </div>
           </div>
 

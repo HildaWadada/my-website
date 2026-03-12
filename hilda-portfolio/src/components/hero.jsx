@@ -16,15 +16,8 @@ export default function Hero() {
             <div className="hero__image-wrapper">
               <img src="/images/dada.jpg" alt="Hilda Wadada" className="hero__photo" />
             </div>
-            {/* Decorative dots */}
             <div className="hero__ring-dot hero__ring-dot--tl" />
             <div className="hero__ring-dot hero__ring-dot--br" />
-          </div>
-
-          {/* Floating badge */}
-          <div className="hero__badge">
-            <span className="hero__badge-dot" />
-            Available for work
           </div>
         </div>
 
