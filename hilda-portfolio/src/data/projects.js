@@ -6,7 +6,7 @@ export const projects = [
     emoji: "🪵",
     color: "#ff9f43",
     desc: "A web-based business management system for a wood and furniture company — streamlining inventory tracking, sales reporting, and employee performance monitoring with a real-world B2B operational workflow.",
-    github: "",
+    github: "https://github.com/HildaWadada/MWF-Project",
     live: "",
   },
   {
@@ -16,7 +16,7 @@ export const projects = [
     emoji: "🤖",
     color: "#54a0ff",
     desc: "A configurable AI interview system using the OpenAI API and Streamlit. Simulates structured interviews, tracks token usage and cost per session, supports session persistence, and exports reports in PDF/JSON.",
-    github: "",
+    github: "https://github.com/HildaWadada/CONSULTANT_BOT",
     live: "",
   },
   {
@@ -26,7 +26,7 @@ export const projects = [
     emoji: "♟️",
     color: "#5f27cd",
     desc: "A Python-based chess board analyzer that determines which black pieces can be captured by a selected white piece, with full input validation, board state tracking, and rule-based movement logic.",
-    github: "",
+    github: "https://github.com/HildaWadada/THE-_CHESS_GAME",
     live: "",
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     emoji: "🧠",
     color: "#ff6b35",
     desc: "An AI-powered quiz system using Python and OpenAI's API. Generates topic-based questions, evaluates freeform answers via LLM, and implements adaptive weighted question selection based on user performance.",
-    github: "",
+    github: "https://github.com/HildaWadada/AI_POWERED_QUIZ",
     live: "",
   },
   {
@@ -46,7 +46,7 @@ export const projects = [
     emoji: "📧",
     color: "#00d2d3",
     desc: "Fetches real-world data from public APIs, generates AI-powered summaries using OpenAI, and automatically sends formatted reports via email. Demonstrates full-stack automation and LLM integration.",
-    github: "",
+    github: "https://github.com/HildaWadada/AI_REPORT-GENERATION",
     live: "",
   },
 ];
