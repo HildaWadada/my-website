@@ -1,3 +1,4 @@
+import { MapPin, Phone, Mail, ArrowRight, Briefcase, Award, Cpu } from 'react-feather';
 import './Hero.css';
 
 export default function Hero() {
@@ -51,43 +52,43 @@ export default function Hero() {
               <span className="hero__info-value">Hilda Wadada</span>
             </div>
             <div className="hero__info-item">
-              <span className="hero__info-label">Phone</span>
+              <span className="hero__info-label"><Phone size={11} style={{marginRight:4}}/>Phone</span>
               <span className="hero__info-value">
                 <a href="tel:+256782828778">+256 782 828 778</a>
               </span>
             </div>
             <div className="hero__info-item">
-              <span className="hero__info-label">Email</span>
+              <span className="hero__info-label"><Mail size={11} style={{marginRight:4}}/>Email</span>
               <span className="hero__info-value">
                 <a href="mailto:wadadahilda@gmail.com">wadadahilda@gmail.com</a>
               </span>
             </div>
             <div className="hero__info-item">
-              <span className="hero__info-label">Location</span>
+              <span className="hero__info-label"><MapPin size={11} style={{marginRight:4}}/>Location</span>
               <span className="hero__info-value">Kampala, Uganda</span>
             </div>
           </div>
 
           {/* CTA row */}
           <div className="hero__cta reveal reveal-delay-4">
-            <a href="#projects" className="btn btn-accent">View My Work</a>
+            <a href="#projects" className="btn btn-accent">View My Work <ArrowRight size={15} /></a>
             <a href="#contact" className="btn btn-outline">Get in Touch</a>
           </div>
 
           {/* Stats */}
           <div className="hero__stats reveal reveal-delay-5">
             <div className="hero__stat">
-              <span className="hero__stat-num">5+</span>
+              <span className="hero__stat-num"><Briefcase size={18} style={{color:'var(--accent)'}}/> 5+</span>
               <span className="hero__stat-label">Projects Built</span>
             </div>
             <div className="hero__stat-divider" />
             <div className="hero__stat">
-              <span className="hero__stat-num">2</span>
+              <span className="hero__stat-num"><Award size={18} style={{color:'var(--accent)'}}/> 2</span>
               <span className="hero__stat-label">Certifications</span>
             </div>
             <div className="hero__stat-divider" />
             <div className="hero__stat">
-              <span className="hero__stat-num">AI</span>
+              <span className="hero__stat-num"><Cpu size={18} style={{color:'var(--accent)'}}/> AI</span>
               <span className="hero__stat-label">Powered Apps</span>
             </div>
           </div>

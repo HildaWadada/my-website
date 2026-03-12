@@ -82,20 +82,14 @@
 /* ── Hamburger ── */
 .navbar__hamburger {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   padding: 4px;
   margin-left: auto;
-}
-.navbar__hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 99px;
-  transition: transform 0.3s, opacity 0.3s;
+  color: var(--text);
+  cursor: pointer;
 }
 .navbar__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .navbar__hamburger.open span:nth-child(2) { opacity: 0; }
