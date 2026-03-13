@@ -32,10 +32,18 @@ export default function Hero() {
           </h1>
 
           <p className="hero__bio reveal reveal-delay-2">
-            I'm <strong>Hilda Wadada</strong> — a Fullstack Developer and AI Engineer based in Kampala, Uganda.
-            I specialize in full-stack development and AI integration, creating responsive web apps and
-            intelligent systems. Passionate about clean code, intuitive design, and transforming complex
-            problems into elegant solutions.
+            I'm <strong>Hilda Wadada</strong> a Fullstack Developer and AI Engineer.
+            I have built responsive web applications and intelligent systems that
+             solve real problems, blending clean frontend design with powerful backend logic and
+             AI integration.
+
+             With hands on experience in Python, JavaScript, and large language models, I've built
+             everything from business management systems to AI powered interview simulators and
+             automated reporting tools. I'm passionate about writing clean, maintainable code and
+             creating experiences that are as intuitive as they are functional.
+
+             Currently pursuing a Certificate in Software and AI Engineering at Turing College 
+             always learning, always building.
           </p>
 
           {/* Info grid */}
