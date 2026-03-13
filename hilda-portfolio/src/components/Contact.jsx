@@ -14,7 +14,7 @@ const contactDetails = [
 
 // ── Replace these with your EmailJS credentials ──
 const SERVICE_ID         = 'service_j6fpewr';
-const TEMPLATE_ID        = 'template_bjw84nr';
+const TEMPLATE_ID        = 'template_qtf9hz5';
 const AUTO_REPLY_TEMPLATE = 'template_2ubux4z';
 const PUBLIC_KEY         = '8QcZ8vWq7lOUUMhy_';
 
