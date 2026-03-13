@@ -7,7 +7,7 @@ import './Contact.css';
 const contactDetails = [
   { icon: <Mail size={16} />,       label: 'Email',    value: 'wadadahilda@gmail.com',        href: 'mailto:wadadahilda@gmail.com' },
   { icon: <Phone size={16} />,      label: 'Phone',    value: '+256 782 828 778',             href: 'tel:+256782828778' },
-  { icon: <FaWhatsapp size={16} />, label: 'WhatsApp', value: '+256 782 828 778',             href: 'https://wa.me/256782828778' },
+  { icon: <FaWhatsapp size={16} />, label: 'WhatsApp', value: '+256 703 723 368',             href: 'https://wa.me/256782828778' },
   { icon: <FaLinkedin size={16} />, label: 'LinkedIn', value: 'linkedin.com/in/hilda-wadada', href: 'https://www.linkedin.com/in/hilda-wadada/' },
   { icon: <MapPin size={16} />,     label: 'Location', value: 'Kampala, Uganda',              href: null },
 ];
@@ -98,7 +98,7 @@ export default function Contact() {
               Let's build something<br /><em>remarkable together.</em>
             </h3>
             <p className="contact__info-text">
-              Whether it's a web application, an AI-powered feature, or something completely new —
+              Whether it's a web application, an AI powered feature, or something completely new —
               drop me a message and let's talk about it.
             </p>
 
@@ -160,7 +160,7 @@ export default function Contact() {
 
             {status === 'success' && (
               <div className="contact__status contact__status--success">
-                ✓ Message sent! I'll get back to you soon.
+                 Message sent! I'll get back to you soon.
               </div>
             )}
             {status === 'error' && (
