@@ -57,9 +57,11 @@ export default function Contact() {
       );
       setStatus('success');
       setForm({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus(null), 15000);
     } catch (err) {
       console.error(err);
       setStatus('error');
+      setTimeout(() => setStatus(null), 15000);
     }
     setLoading(false);
   };
@@ -82,7 +84,7 @@ export default function Contact() {
               Let's build something<br /><em>remarkable together.</em>
             </h3>
             <p className="contact__info-text">
-              Whether it's a web application, an AI powered feature, or something completely new 
+              Whether it's a web application, an AI-powered feature, or something completely new —
               drop me a message and let's talk about it.
             </p>
 
