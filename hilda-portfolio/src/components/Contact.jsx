@@ -7,15 +7,16 @@ import './Contact.css';
 const contactDetails = [
   { icon: <Mail size={16} />,       label: 'Email',    value: 'wadadahilda@gmail.com',        href: 'mailto:wadadahilda@gmail.com' },
   { icon: <Phone size={16} />,      label: 'Phone',    value: '+256 782 828 778',             href: 'tel:+256782828778' },
-  { icon: <FaWhatsapp size={16} />, label: 'WhatsApp', value: '+256 703 723 368',             href: 'https://wa.me/256782828778' },
+  { icon: <FaWhatsapp size={16} />, label: 'WhatsApp', value: '+256 782 828 778',             href: 'https://wa.me/256782828778' },
   { icon: <FaLinkedin size={16} />, label: 'LinkedIn', value: 'linkedin.com/in/hilda-wadada', href: 'https://www.linkedin.com/in/hilda-wadada/' },
   { icon: <MapPin size={16} />,     label: 'Location', value: 'Kampala, Uganda',              href: null },
 ];
 
 // ── Replace these with your EmailJS credentials ──
-const SERVICE_ID  = 'service_frhwag9';
-const TEMPLATE_ID = 'template_bjw84nr';
-const PUBLIC_KEY  = '8QcZ8vWq7lOUUMhy_';
+const SERVICE_ID         = 'service_j6fpewr';
+const TEMPLATE_ID        = 'template_bjw84nr';
+const AUTO_REPLY_TEMPLATE = 'template_2ubux4z';
+const PUBLIC_KEY         = '8QcZ8vWq7lOUUMhy_';
 
 export default function Contact() {
   const formRef               = useRef(null);
@@ -45,9 +46,22 @@ export default function Contact() {
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setLoading(true);
     try {
+      // Send main email to Hilda
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
+        {
+          from_name:  form.name,
+          from_email: form.email,
+          message:    form.message,
+        },
+        PUBLIC_KEY
+      );
+
+      // Send auto-reply to the person who contacted
+      await emailjs.send(
+        SERVICE_ID,
+        AUTO_REPLY_TEMPLATE,
         {
           from_name:  form.name,
           from_email: form.email,
@@ -146,7 +160,7 @@ export default function Contact() {
 
             {status === 'success' && (
               <div className="contact__status contact__status--success">
-                 Message sent! I'll get back to you soon.
+                ✓ Message sent! I'll get back to you soon.
               </div>
             )}
             {status === 'error' && (
