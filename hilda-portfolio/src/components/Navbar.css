@@ -123,6 +123,5 @@
   .navbar__links,
   .navbar__cta { display: none; }
   .navbar__hamburger { display: flex; }
-  .navbar__mobile { display: flex; }
   .navbar__logo { margin-right: 0; }
 }
