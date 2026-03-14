@@ -22,7 +22,7 @@
   gap: 2rem;
 }
 
-/* ── Logo ── */
+/* Logo */
 .navbar__logo {
   font-size: 1.5rem;
   font-weight: 800;
@@ -35,7 +35,7 @@
 .navbar__logo-hw { color: var(--white); }
 .navbar__logo-dot { color: var(--accent); font-size: 1.8rem; line-height: 1; }
 
-/* ── Links ── */
+/* Desktop Links */
 .navbar__links {
   display: flex;
   align-items: center;
@@ -64,14 +64,10 @@
 }
 
 .navbar__link:hover,
-.navbar__link--active {
-  color: var(--white);
-}
+.navbar__link--active { color: var(--white); }
 
 .navbar__link--active::after,
-.navbar__link:hover::after {
-  transform: scaleX(1);
-}
+.navbar__link:hover::after { transform: scaleX(1); }
 
 .navbar__cta {
   font-size: 0.85rem;
@@ -79,7 +75,7 @@
   border-radius: 6px;
 }
 
-/* ── Hamburger ── */
+/* Hamburger - hidden on desktop */
 .navbar__hamburger {
   display: none;
   align-items: center;
@@ -91,26 +87,26 @@
   color: var(--text);
   cursor: pointer;
 }
-.navbar__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.navbar__hamburger.open span:nth-child(2) { opacity: 0; }
-.navbar__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Mobile menu ── */
+/* Mobile menu - hidden on desktop */
 .navbar__mobile {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
   background: var(--bg2);
   border-top: 1px solid var(--border);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.3s ease;
 }
+
 .navbar__mobile--open {
   max-height: 400px;
+  padding: 1.5rem;
 }
+
 .navbar__mobile-link {
   font-size: 1rem;
   font-weight: 500;
@@ -119,9 +115,11 @@
 }
 .navbar__mobile-link:hover { color: var(--accent); }
 
+/* Mobile breakpoint */
 @media (max-width: 768px) {
-  .navbar__links,
-  .navbar__cta { display: none; }
+  .navbar__links { display: none; }
+  .navbar__cta   { display: none; }
   .navbar__hamburger { display: flex; }
+  .navbar__mobile { display: flex; }
   .navbar__logo { margin-right: 0; }
 }
