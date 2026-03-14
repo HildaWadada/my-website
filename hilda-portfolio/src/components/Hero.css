@@ -34,7 +34,7 @@
   display: grid;
   grid-template-columns: 400px 1fr;
   gap: 5rem;
-  align-items: start;
+  align-items: center;
   position: relative;
   z-index: 1;
 }
