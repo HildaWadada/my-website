@@ -3,7 +3,6 @@ import { Menu, X } from 'react-feather';
 import './Navbar.css';
 
 const navLinks = [
-  { label: 'Home',     href: '#home' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills',   href: '#skills' },
   { label: 'Contact',  href: '#contact' },
