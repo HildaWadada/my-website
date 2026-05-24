@@ -29,15 +29,4 @@ export const projects = [
     github: "https://github.com/HildaWadada/CONSULTANT_BOT",
     live: "",
   },
-  {
-    id: 4,
-    title: "AI-Powered Quiz",
-    tag: "AI · Python",
-    emoji: "🧠",
-    color: "#ff6b35",
-    desc: "An AI-powered quiz system using Python and OpenAI's API. Generates topic-based questions, evaluates freeform answers via LLM, and implements adaptive weighted question selection based on user performance.",
-    github: "https://github.com/HildaWadada/AI_POWERED_QUIZ",
-    live: "",
-  },
-
 ];
