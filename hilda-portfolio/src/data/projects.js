@@ -31,16 +31,6 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Chess Capture Analyzer",
-    tag: "Python",
-    emoji: "♟️",
-    color: "#5f27cd",
-    desc: "A Python-based chess board analyzer that determines which black pieces can be captured by a selected white piece, with full input validation, board state tracking, and rule-based movement logic.",
-    github: "https://github.com/HildaWadada/THE-_CHESS_GAME",
-    live: "",
-  },
-  {
-    id: 5,
     title: "AI-Powered Quiz",
     tag: "AI · Python",
     emoji: "🧠",
@@ -49,14 +39,5 @@ export const projects = [
     github: "https://github.com/HildaWadada/AI_POWERED_QUIZ",
     live: "",
   },
-  {
-    id: 6,
-    title: "AI Report Generation & Emailing",
-    tag: "Automation",
-    emoji: "📧",
-    color: "#00d2d3",
-    desc: "Fetches real-world data from public APIs, generates AI-powered summaries using OpenAI, and automatically sends formatted reports via email. Demonstrates full-stack automation and LLM integration.",
-    github: "https://github.com/HildaWadada/AI_REPORT-GENERATION",
-    live: "",
-  },
+
 ];
