@@ -21,12 +21,12 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Tech Consultant Bot",
-    tag: "AI · Chatbot",
-    emoji: "💬",
+    title: " AgriFarms International",
+    tag: "AGRI-TECH • LIVESTOCK MARKETPLACE",
+    emoji: "🐄",
     color: "#a29bfe",
-    desc: "An AI-powered tech consultant chatbot built with Python and OpenAI. Engages users in natural conversation to understand their technical challenges, recommends tools and technologies, and provides tailored advice — simulating a real-world software consultancy experience.",
-    github: "https://github.com/HildaWadada/CONSULTANT_BOT",
+    desc: "A Pan-African livestock trading platform built with Next.js, React, Python, Docker and PostgreSQL. Connects cattle farmers, buyers, sellers, and drivers through a secure digital marketplace featuring veterinary record validation, country-based analytics, multi-language support, role-based dashboards, and transaction management. Designed to modernize livestock commerce and foster trusted cross-border cattle trading across Africa.",
+    github: "https://github.com/HildaWadada/AGRI_FARMS_INTL",
     live: "",
   },
 ];
