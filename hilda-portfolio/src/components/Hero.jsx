@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="hero__image-col reveal">
           <div className="hero__image-ring">
             <div className="hero__image-wrapper">
-              <img src="/images/dada.jpg" alt="Hilda Wadada" className="hero__photo" />
+              <img src="/images/dee.jpeg" alt="Hilda Wadada" className="hero__photo" />
             </div>
             <div className="hero__ring-dot hero__ring-dot--tl" />
             <div className="hero__ring-dot hero__ring-dot--br" />
