@@ -36,7 +36,7 @@ function SkillRow({ skill, dotColor, visible }) {
         <span className="skill-dot" style={{ background: dotColor }} />
         <span className="skill-row__name">{skill.name}</span>
       </div>
-      <span className="skill-row__pct">{skill.level}%</span>
+
     </div>
   );
 }

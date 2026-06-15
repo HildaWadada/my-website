@@ -71,8 +71,3 @@
   color: var(--text);
   font-weight: 400;
 }
-
-.skill-row__pct {
-  font-size: 0.75rem;
-  color: var(--text-muted, #888);
-}
