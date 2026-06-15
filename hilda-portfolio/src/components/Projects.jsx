@@ -42,6 +42,7 @@ export default function Projects() {
                     <a href={p.github} target="_blank" rel="noreferrer" className="project-card__link">
                       <GitHub size={14} /> GitHub
                     </a>
+                    
                   )}
                   {p.live && (
                     <a href={p.live} target="_blank" rel="noreferrer" className="project-card__link project-card__link--accent">

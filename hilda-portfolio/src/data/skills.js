@@ -12,4 +12,7 @@ export const skills = [
   { name: "LLMs",               level: 80, color: "#ffd21e", icon: "SiOpenai"  },
   { name: "LangChain & LangGraph",level: 89, color: "#55efc4", icon: "SiChainlink"    },
   { name: "APIs & Libraries",   level: 82, color: "#ff6c37", icon: "SiPostman"      },
+  { name: "Natural Language Processing (NLP)",   level: 82, color: "#ff6c37", icon: "SiNLP"      },
+  { name: "Deep Learning",   level: 82, color: "#ff6c37", icon: "SiDeeplearning"      },
+  
 ];

@@ -29,4 +29,23 @@ export const projects = [
     github: "https://github.com/HildaWadada/AGRI_FARMS_INTL",
     live: "",
   },
+
+  {
+    id: 4,
+    title: "WorldPulse NLP Intelligence Suite",
+    tag: "ARTIFICIAL INTELLIGENCE • NATURAL LANGUAGE PROCESSING",
+    emoji: "🧠",
+    color: "#74b9ff",
+    desc: "An end-to-end Natural Language Processing platform built with Python, NLTK, SpaCy, Scikit-learn, Pandas, and Matplotlib. Analyzes large-scale news datasets through sentiment analysis, text classification, keyword extraction, topic discovery, automated summarization, and interactive visualizations. Designed to transform unstructured textual data into actionable insights for research, media monitoring, and data-driven decision-making.",
+  },
+
+  {
+    id: 5,
+    title: "Deep Learning News Classification System",
+    tag: "DEEP LEARNING • TEXT CLASSIFICATION",
+    emoji: "🤖",
+    color: "#fd79a8",
+    desc: "A deep learning-powered news classification system built with TensorFlow, Keras, Python, and NLP techniques. Processes and categorizes news articles into predefined topics using neural networks, tokenization, word embeddings, and sequence modeling. Features automated data preprocessing, model training, performance evaluation, and predictive analytics for scalable content classification.",
+    
+  },
 ];
