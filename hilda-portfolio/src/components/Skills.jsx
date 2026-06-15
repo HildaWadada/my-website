@@ -59,9 +59,9 @@ export default function Skills() {
       <div className="container">
         <div className="section-header reveal">
           <div className="section-badge">My Expertise</div>
-          <h2 className="section-title">My Work <span>Skills</span></h2>
+          <h2 className="section-title">My Tech <span>Stack</span></h2>
           <p className="section-subtitle">
-            A snapshot of the tools and technologies I use to build smart, scalable, and user-friendly applications.
+            A snapshot of the tools and technologies I use to build smart, scalable, and user friendly applications.
           </p>
         </div>
 
