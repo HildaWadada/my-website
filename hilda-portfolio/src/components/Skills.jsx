@@ -1,40 +1,42 @@
 import { useEffect, useRef, useState } from 'react';
-import * as SiIcons from 'react-icons/si';
 import { skills } from '../data/skills';
 import './Skills.css';
 
-function SkillCard({ skill, visible }) {
-  const [width, setWidth] = useState(0);
-  const Icon = SiIcons[skill.icon];
+const categories = [
+  {
+    label: 'Frontend',
+    color: '#378ADD',
+    names: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React JS', 'Next JS'],
+  },
+  {
+    label: 'Backend & Databases',
+    color: '#1D9E75',
+    names: ['Python', 'Node JS', 'APIs & Libraries', 'PostgreSQL & Databases'],
+  },
+  {
+    label: 'AI / ML',
+    color: '#7F77DD',
+    names: ['Prompt Engineering', 'LLMs', 'LangChain & LangGraph', 'Natural Language Processing (NLP)', 'Deep Learning'],
+  },
+];
+
+function SkillRow({ skill, dotColor, visible }) {
+  const [pct, setPct] = useState(0);
 
   useEffect(() => {
     if (visible) {
-      const t = setTimeout(() => setWidth(skill.level), 200);
+      const t = setTimeout(() => setPct(skill.level), 200);
       return () => clearTimeout(t);
     }
   }, [visible, skill.level]);
 
   return (
-    <div className="skill-card">
-      <div className="skill-card__top">
-        <div className="skill-card__icon" style={{ background: `${skill.color}18`, borderColor: `${skill.color}30` }}>
-          {Icon && <Icon size={24} color={skill.color} />}
-        </div>
-        <div className="skill-card__info">
-          <span className="skill-card__name">{skill.name}</span>
-          <span className="skill-card__pct" style={{ color: skill.color }}>{skill.level}%</span>
-        </div>
+    <div className="skill-row">
+      <div className="skill-row__left">
+        <span className="skill-dot" style={{ background: dotColor }} />
+        <span className="skill-row__name">{skill.name}</span>
       </div>
-      <div className="skill-card__bar-bg">
-        <div
-          className="skill-card__bar-fill"
-          style={{
-            width: `${width}%`,
-            background: `linear-gradient(90deg, ${skill.color}, ${skill.color}88)`,
-            transition: 'width 1s cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
-        />
-      </div>
+      <span className="skill-row__pct">{skill.level}%</span>
     </div>
   );
 }
@@ -63,12 +65,28 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="skills__grid">
-          {skills.map((skill, i) => (
-            <div key={skill.name} className={`reveal reveal-delay-${(i % 4) + 1}`}>
-              <SkillCard skill={skill} visible={visible} />
-            </div>
-          ))}
+        <div className="skills__columns">
+          {categories.map((cat) => {
+            const catSkills = cat.names
+              .map((n) => skills.find((s) => s.name === n))
+              .filter(Boolean);
+
+            return (
+              <div key={cat.label} className="skills__col reveal">
+                <p className="skills__cat-label">{cat.label}</p>
+                <div className="skills__list">
+                  {catSkills.map((skill) => (
+                    <SkillRow
+                      key={skill.name}
+                      skill={skill}
+                      dotColor={cat.color}
+                      visible={visible}
+                    />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
