@@ -11,7 +11,7 @@ const categories = [
   {
     label: 'Backend & Databases',
     color: '#1D9E75',
-    names: ['Python', 'Node JS', 'APIs & Libraries', 'PostgreSQL & Databases'],
+    names: ['Python', 'Node JS', 'APIs & Libraries', 'Docker', 'PostgreSQL & Databases'],
   },
   {
     label: 'AI / ML',
